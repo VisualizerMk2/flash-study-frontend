@@ -1,68 +1,21 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Flash Study
 
-## Available Scripts
+Flash study is a web app for users to create, store, and review flash cards for any subject! Users can create categories and then begin adding a stack of cards with questions on one side and answers on the other. Users can also choose to use the Leitner system.
 
-In the project directory, you can run:
+In this system, cards that are answered correctly will be moved up to a higher tier of card buckets and ones that are answered incorrectly will be moved back to the lowest tier. Cards in higher buckets will be reviewed less often than lower level cards, allowing users to focus on questions that they are having the most difficulty remembering and practice spaced repitition to maximize their learning!
 
-### `npm start`
+## Technology
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### Back End
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+Flash Study's back-end uses NestJS, self described as:
 
-### `npm test`
+> A progressive Node.js framework for building efficient, reliable and scalable server-side applications.
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Along with PostgresQL and utilizing typeORM for database storage of user and card info. The Github repo for Flash Study's back end can be found [here.](https://github.com/VisualizerMk2/flash-study)
 
-### `npm run build`
+---
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Roadmap
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+To institute and practice an agile development cycle, this [Trello board](https://trello.com/b/tksYt7QN/flash-study) will be updated with user stories and progress updates for the application.
