@@ -1,5 +1,6 @@
 import axios from 'axios'
 import { REGISTER_SUCCESS, REGISTER_FAIL } from './types'
+import { push } from 'connected-react-router'
 
 export const register = ({ username, password }) => async (dispatch) => {
   const config = {
@@ -18,13 +19,13 @@ export const register = ({ username, password }) => async (dispatch) => {
       payload: res.data,
     })
     // dispatch(loadUser())
+    dispatch(push('/'))
   } catch (err) {
-    console.log(err.response.data)
     const { statusCode } = err.response.data
     if (err.response.statusCode === 409) {
       console.log(err.response.data.message)
     } else {
-      console.log(err.response.data.message[0])
+      console.log(err.response.data.message)
     }
 
     // if (errors) {
