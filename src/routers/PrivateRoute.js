@@ -9,12 +9,10 @@ const PrivateRoute = ({
   <Route
     {...rest}
     component={(props) =>
-      isAuthenticated ? (
-        <div>
-          <Component {...props} />
-        </div>
-      ) : (
+      !isAuthenticated && !loading ? (
         <Redirect to="/" />
+      ) : (
+        <Component {...props} />
       )
     }
   />
