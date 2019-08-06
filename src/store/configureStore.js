@@ -5,12 +5,11 @@ import { createBrowserHistory } from 'history'
 import createRootReducer from '../reducers'
 import { routerMiddleware } from 'connected-react-router'
 
-const initialState = {}
-
 const middleware = [thunk]
+
 export const history = createBrowserHistory()
 
-export default function configureStore(initialState) {
+export default function configureStore(initialState = {}) {
   const store = createStore(
     createRootReducer(history),
     initialState,
@@ -20,6 +19,7 @@ export default function configureStore(initialState) {
   )
   return store
 }
+
 // const store = createStore(
 //   rootReducer(history),
 //   initialState,

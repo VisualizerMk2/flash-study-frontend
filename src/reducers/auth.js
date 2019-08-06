@@ -9,13 +9,12 @@ const initialState = {
 
 export default function(state = initialState, action) {
   const { type, payload } = action
-  console.log(type, payload)
 
   switch (type) {
     case REGISTER_SUCCESS:
+      localStorage.removeItem('token')
       return {
         ...state,
-        ...payload,
         isAuthenticated: null,
         loading: false,
       }

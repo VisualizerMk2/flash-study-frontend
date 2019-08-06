@@ -1,5 +1,5 @@
 import React from 'react'
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import { Route, Switch } from 'react-router-dom'
 import Register from '../components/auth/Register'
 import Landing from '../components/layout/Landing'
 import { history } from '../store/configureStore'

@@ -4,7 +4,6 @@ import { connect } from 'react-redux'
 import * as Yup from 'yup'
 import PropTypes from 'prop-types'
 
-import Layout from '../layout/Layout'
 import { register } from '../../actions/auth'
 
 const Register = ({ values, isSubmitting }) => {

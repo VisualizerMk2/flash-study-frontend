@@ -7,6 +7,7 @@ import AppRouter from './routers/AppRouter'
 import Layout from './components/layout/Layout'
 
 const store = configureStore()
+
 const App = () => (
   <Layout>
     <Provider store={store}>
