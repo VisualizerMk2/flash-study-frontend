@@ -4,9 +4,9 @@ import { connect } from 'react-redux'
 import * as Yup from 'yup'
 import PropTypes from 'prop-types'
 
-import { register } from '../../actions/auth'
+import { login, logout } from '../../actions/auth'
 
-const Register = ({ values, isSubmitting }) => {
+const Login = ({ values, isSubmitting, logout }) => {
   return (
     <div>
       <Form>
@@ -16,13 +16,14 @@ const Register = ({ values, isSubmitting }) => {
         <div>
           <Field type="password" name="password" placeholder="Password" />
         </div>
-        <button disabled={isSubmitting}>Submit</button>
+        <button disabled={isSubmitting}>Login</button>
       </Form>
+      <button onClick={logout}>Logout</button>
     </div>
   )
 }
 
-const FormikRegister = withFormik({
+const FormikLogin = withFormik({
   mapPropsToValues({ username, password }) {
     return {
       username: username || '',
@@ -38,17 +39,18 @@ const FormikRegister = withFormik({
     {
       resetForm,
       setSubmitting,
-      props: { register },
+      props: { login },
     }
   ) {
-    register(values)
+    login(values)
     resetForm()
     setSubmitting(false)
   },
-})(Register)
+})(Login)
 
-Register.propTypes = {
-  register: PropTypes.func.isRequired,
+Login.propTypes = {
+  login: PropTypes.func.isRequired,
+  logout: PropTypes.func.isRequired,
   values: PropTypes.object.isRequired,
 }
 
@@ -58,5 +60,5 @@ const mapStateToProps = (state) => ({
 
 export default connect(
   mapStateToProps,
-  { register }
-)(FormikRegister)
+  { login, logout }
+)(FormikLogin)

@@ -1,5 +1,12 @@
 import axios from 'axios'
-import { REGISTER_SUCCESS, REGISTER_FAIL } from './types'
+import {
+  REGISTER_SUCCESS,
+  REGISTER_FAIL,
+  LOGIN_SUCCESS,
+  LOGIN_FAIL,
+  LOGOUT,
+  CLEAR_PROFILE,
+} from './types'
 import { push } from 'connected-react-router'
 
 export const register = ({ username, password }) => async (dispatch) => {
@@ -36,4 +43,36 @@ export const register = ({ username, password }) => async (dispatch) => {
       type: REGISTER_FAIL,
     })
   }
+}
+
+export const login = ({ username, password }) => async (dispatch) => {
+  const config = {
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  }
+
+  const body = JSON.stringify({ username, password })
+
+  try {
+    const res = await axios.post('/auth/signin', body, config)
+
+    dispatch({
+      type: LOGIN_SUCCESS,
+      payload: res.data,
+    })
+  } catch (err) {
+    const { statusCode } = err.response.data
+    const errors = err.response.data.errors
+
+    dispatch({
+      type: LOGIN_FAIL,
+    })
+  }
+}
+
+export const logout = () => (dispatch) => {
+  // dispatch({ type: CLEAR_PROFILE })
+  console.log('Logout initiated')
+  dispatch({ type: LOGOUT })
 }
